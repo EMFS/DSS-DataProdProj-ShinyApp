@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Fruits App in Shiny</title>
+	<meta name="description" content="Fruits App in Shiny">
+	<meta name="author" content="EMFS">
+	<meta name="generator" content="slidify" />
+	
+	<!-- LOAD STYLE SHEETS -->
+	<link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/html5slides/default/styles.css">
+	<link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />  <link rel="stylesheet" href = "assets/css/ribbons.css">
+  
+</head>
+<body style='display: none'>
+	<section class='slides layout-regular template-regular'>
+     <article class="" id="slide-1" style="background:;">
+  <h3>Fruits App in Shiny</h3>
+  <p>This is a pitch for the Fruits app developped in R using Shiny, an application framework that makes it easy to create server/client interaction and thus reactive applications.</p>
+
+</article>
+
+<article class="" id="slide-2" style="background:;">
+  <h3>What is the Fruits app</h3>
+  <p>The Fruits app is a somewhat contrived example that has no direct practical use.<br>
+The app does no fancy analysis, but the code can be reused to show diferent input/output methods, thus showing the capability of Shiny apps.</p>
+
+<p>There are several input objects in the app. 
+Each input is then used to generate at least an output that can be viewd on the results section.</p>
+
+</article>
+
+<article class="" id="slide-3" style="background:;">
+  <h3>Pie Chart of fruits</h3>
+  <p>The main ploting result is a pie chart of the proportion of bananas and oranges that were selected by the user through several input options:</p>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-1"> </p>
+
+</article>
+
+<article class="" id="slide-4" style="background:;">
+  <h3>How to make the app work?</h3>
+  <p>Head over to the <a href="http://www.shinyapps.io">Shiny apps web site</a> or directly to the app itself:</p>
+
+<p><a href="http://emfs.shinyapps.io/DSS-DataProdProj-ShinyApp">Fruits app</a></p>
+
+<p>Every input already has a default value so that every output has initial values when the app is loaded.
+For example, the final pie chart is drawn with the initial default values.</p>
+
+<p>Then the user simply changes any of the initial default values and watch the results!</p>
+
+</article>
+
+<article class="" id="slide-5" style="background:;">
+  <h3>How can I reuse this app?</h3>
+  <p>Just use the code as a template:</p>
+
+<ul>
+<li>change the inputs in the <code>io.R</code> file</li>
+<li>change the processing code in the <code>server.r</code> file</li>
+<li>make sure the results are adequately rendered in a local web server</li>
+<li>publish it to the world on the <a href="https://rpubs.com/">RPubs</a> web site or directly with the R command:</li>
+</ul>
+
+<p><code>publish(title = &#39;mytitle&#39;, &#39;index.html&#39;, host = &#39;rpubs&#39;)</code></p>
+
+</article>
+
+  </section>
+</body>
+  <!-- LOAD JAVASCRIPTS  -->
+	<script src='http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/html5slides/default/slides.js'></script>
+	<!-- LOAD HIGHLIGHTER JS FILES -->
+	<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+	 
+	</html>

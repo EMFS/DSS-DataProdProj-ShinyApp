@@ -1,0 +1,8 @@
+name: DSS-DataProdProj-ShinyApp
+account: emfs
+server: shinyapps.io
+bundleId: 208618
+url: https://emfs.shinyapps.io/DSS-DataProdProj-ShinyApp
+when: 1434901039.65176
+asMultiple: FALSE
+asStatic: FALSE
