@@ -7,17 +7,16 @@ framework   : html5slides   # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
-mode        : standalone # {standalone, draft, selfcontained}
+mode        : selfcontained # {standalone, draft, selfcontained}
 knit        : slidify::knit2slides
 ---
 
 ## Fruits App in Shiny
 
-This is a pitch for the Fruits app developped in R using Shiny, an application framework that makes it easy to create server/client interaction and thus reactive applications.
+This is a pitch for the Fruits app developed in R using Shiny, an application framework that makes it easy to create server/client interaction and thus reactive applications.  
 
----
 
-## What is the Fruits app
+### What is the Fruits app
 
 The Fruits app is a somewhat contrived example that has no direct practical use.  
 The app does no fancy analysis, but the code can be reused to show diferent input/output methods, thus showing the capability of Shiny apps.
@@ -27,11 +26,31 @@ Each input is then used to generate at least an output that can be viewd on the 
 
 ---
 
-## Pie Chart of fruits
+## Pie Chart of fruits (code)
 
-The main ploting result is a pie chart of the proportion of bananas and oranges that were selected by the user through several input options:
+The main ploting result is a pie chart of the proportion of bananas and oranges that were selected by the user through several input options: [I had to use a link to the image on github as I didn't manage to make RPubs refer directly to the image]
 
-![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1-1.png) 
+
+
+```r
+require(ggplot2)
+df <- data.frame(c("Bananas", "Oranges"), c(3, 5))
+names(df) <- c('fruits', 'quantity')
+
+ggplot(df, aes(x=1, y=quantity, fill=fruits)) +
+      geom_bar(stat = "identity", color='black') + coord_polar(theta = 'y') +
+      ggtitle("Pie Chart of fruits") + 
+      theme(axis.ticks=element_blank(),
+            axis.title=element_blank(), 
+            axis.text.y=element_blank()) +
+      guides(fill=guide_legend(override.aes=list(colour=NA)))
+```
+
+---
+
+## Pie Chart of Fruits (Image)
+
+![pie char image](http://raw.githubusercontent.com/EMFS/DSS-DataProdProj-ShinyApp/master/FruitsPresentation/assets/fig/unnamed-chunk-1-1.png "Pie Chart Image")
 
 ---
 
