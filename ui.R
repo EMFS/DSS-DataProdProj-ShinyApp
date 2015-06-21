@@ -15,12 +15,12 @@ fluidPage(
     p("There are several input objects below. Simply change any of their default values and watch the results! There won't be any fancy analysis, but the code can be reused to show diferent input/output methods, thus showing the capability of Shiny apps.")),
   
   # inputs
-  numericInput(inputId = 'id1', 
+  numericInput(inputId = 'bananas', 
                label = 'Number of bananas:',
                value = 3,min = 0,max = 10,step = 1
   ),
   
-  sliderInput(inputId = "num", 
+  sliderInput(inputId = "oranges", 
               label = "Number of oranges:", 
               value = 5, min = 1, max = 10),
   
@@ -42,6 +42,7 @@ fluidPage(
     textOutput(outputId = "CheckBoxOut"),
     p(),
     'Expected delivery:',
-    textOutput(outputId = "DeliveryOut")
+    textOutput(outputId = "DeliveryOut"),
+    plotOutput('pieChart')
   )
 )
